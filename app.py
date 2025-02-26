@@ -4,7 +4,7 @@ import random
 from flask import jsonify
 import time
 
-# comment
+# Flask
 app = Flask(__name__)
 redis_db = redis.Redis(host="redis", port=6379, db=0, decode_responses=True)
 
