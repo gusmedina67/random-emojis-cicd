@@ -27,6 +27,11 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-buildx-
 
+    - name: Install Docker Compose
+      run: |
+        sudo apt-get update
+        sudo apt-get install docker-compose
+
     - name: Build with Docker Compose
       run: docker-compose -f docker-compose.yml build
 
@@ -43,4 +48,3 @@ jobs:
         environment_name: Emoji-tester-env
         version_label: ${{ github.run_number }}-${{ github.sha }}
         deployment_package: deploy.zip
-
